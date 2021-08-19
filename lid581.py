@@ -599,7 +599,7 @@ def Liner_semanal():
 		T20.info('Limpeza da Conveyor #4 LN-BB e Pushers 1,2,3 no mesanino: 1-Limpar com pano umedecido em álcool isopropílico.')
 		T21.info('Limpeza da Conveyor #5 LN-BB e Pushers 1,2,3 no mesanino: 1-Limpar com pano umedecido em álcool isopropílico.')
 		T22.info('Limpeza do filtro AIRCON painel elétrico, na alimentação de entrada: 1- Utilizar água e pistola de ar.')
-		T23.info('Limpeza do filtro de selante na alimentação de entrada: 1-Utilizar água e pistola de ar.')
+		T23.info('Daytank - Limpeza dos filtros de alimentação da linha: 1- Utilizar água e pistola de ar.')
 		T24.info('Verificar visualmente todo sistema, para ver se não á anomalias.')
 		T25.info('Verificar a quantidade de selante, abastecer se necessário.')
 		T26.info('Limpar do filtro "Y" da mangueira de sucção ou antes de inciar o abastecimento de um novo IBC. 1-Utilizar água e pistola de ar.')
@@ -609,6 +609,7 @@ def Liner_semanal():
 		T30.info('Inspecionar conjunto do agitador em cima do reservatório de selante.')
 		T31.info('Realizar 5S geral da área.')
 		T32.info('Limpar externamente o tank. 1-Limpar com pano umedecido e álcool isopropílico.')
+		T33.info('Daytank: Limepeza do fltro de selante na alimentação do Tanque: 1-Utilizar água e pistola de ar)
 				
 		respostas = ['NOK', 'OK']
 
@@ -689,7 +690,9 @@ def Liner_semanal():
 		dic['C31'] = C31.text_input('Comentário item 31:', "")
 		dic['Q32'] = Q32.selectbox('Item 32:', respostas)
 		dic['C32'] = C32.text_input('Comentário item 32:', "")
-		
+		dic['Q33'] = Q33.selectbox('Item 33:', respostas)
+		dic['C33'] = C33.text_input('Comentário item 33:', "")
+			 
 		submitted = st.form_submit_button('Enviar formulário')
 		
 	# Envio do formulário
