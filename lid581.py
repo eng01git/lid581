@@ -610,7 +610,7 @@ def Liner_semanal():
 		T30.info('Inspecionar conjunto do agitador em cima do reservatório de selante.')
 		T31.info('Realizar 5S geral da área.')
 		T32.info('Limpar externamente o tank. 1-Limpar com pano umedecido e álcool isopropílico.')
-		T33.info('Daytank: Limepeza do fltro de selante na alimentação do Tanque: 1-Utilizar água e pistola de ar.')
+		T33.info('Daytank: Limepeza do filtro de selante na alimentação do Tanque: 1-Utilizar água e pistola de ar.')
 				
 		respostas = ['NOK', 'OK']
 
