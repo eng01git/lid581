@@ -564,7 +564,17 @@ def Liner_semanal():
 		T20, Q20, C20 = st.beta_columns([3,1,3])
 		T21, Q21, C21 = st.beta_columns([3,1,3])
 		T22, Q22, C22 = st.beta_columns([3,1,3])
-		
+		T23, Q23, C23 = st.beta_columns([3,1,3])
+		T24, Q24, C24 = st.beta_columns([3,1,3])
+		T25, Q25, C25 = st.beta_columns([3,1,3])
+		T26, Q26, C26 = st.beta_columns([3,1,3])
+		T27, Q27, C27 = st.beta_columns([3,1,3])
+		T28, Q28, C28 = st.beta_columns([3,1,3])
+		T29, Q29, C29 = st.beta_columns([3,1,3])
+		T30, Q30, C30 = st.beta_columns([3,1,3])
+		T31, Q31, C31 = st.beta_columns([3,1,3])
+		T32, Q32, C32 = st.beta_columns([3,1,3])
+				
 		# Texto das questões
 		T00.info('Limpeza Conveyor #1 BALN e Pushers 1,2,3,4: 1- Limpar com pano umedecido  e álcool isopropílico.')
 		T01.info('Limpeza Conveyor #2 BA-LN e Pushers 1,2,3,4: 1- Limpar com pano umedecido  e álcool isopropílico.')
@@ -589,7 +599,17 @@ def Liner_semanal():
 		T20.info('Limpeza da Conveyor #4 LN-BB e Pushers 1,2,3 no mesanino: 1-Limpar com pano umedecido em álcool isopropílico.')
 		T21.info('Limpeza da Conveyor #5 LN-BB e Pushers 1,2,3 no mesanino: 1-Limpar com pano umedecido em álcool isopropílico.')
 		T22.info('Limpeza do filtro AIRCON painel elétrico, na alimentação de entrada: 1- Utilizar água e pistola de ar.')
-			
+		T23.info('Limpeza do filtro de selante na alimentação de entrada: 1-Utilizar água e pistola de ar.')
+		T24.info('Verificar visualmente todo sistema, para ver se não á anomalias.')
+		T25.info('Verificar a quantidade de selante, abastecer se necessário.')
+		T26.info('Limpar do filtro "Y" da mangueira de sucção ou antes de inciar o abastecimento de um novo IBC. 1-Utilizar água e pistola de ar.')
+		T27.info('Verificar a pressão de ar comprimido na unidade de consevarção.')
+		T28.info('Verificar a pressão do sitema de alimentação do selante.')
+		T29.info('Limpar o filtro do selante caso tenha sido substituido no item 11, ou descartar se estiver danificado. 1-Utilizar água e pistola de ar.')
+		T30.info('Inspecionar conjunto do agitador em cima do reservatório de selante.')
+		T31.info('Realizar 5S geral da área.')
+		T32.info('Limpar externamente o tank. 1-Limpar com pano umedecido e álcool isopropílico.')
+				
 		respostas = ['NOK', 'OK']
 
 		# Questões
@@ -649,6 +669,26 @@ def Liner_semanal():
 		dic['C21'] = C21.text_input('Comentário item 21:', "")
 		dic['Q22'] = Q22.selectbox('Item 22:', respostas)
 		dic['C22'] = C22.text_input('Comentário item 22:', "")
+		dic['Q23'] = Q23.selectbox('Item 23:', respostas)
+		dic['C23'] = C23.text_input('Comentário item 23:', "")
+		dic['Q24'] = Q24.selectbox('Item 24:', respostas)
+		dic['C24'] = C24.text_input('Comentário item 24:', "")
+		dic['Q25'] = Q25.selectbox('Item 25:', respostas)
+		dic['C25'] = C25.text_input('Comentário item 25:', "")
+		dic['Q26'] = Q26.selectbox('Item 26:', respostas)
+		dic['C26'] = C26.text_input('Comentário item 26:', "")		
+		dic['Q27'] = Q27.selectbox('Item 27:', respostas)
+		dic['C27'] = C27.text_input('Comentário item 27:', "")
+		dic['Q28'] = Q28.selectbox('Item 28:', respostas)
+		dic['C28'] = C28.text_input('Comentário item 28:', "")		
+		dic['Q29'] = Q29.selectbox('Item 29:', respostas)
+		dic['C29'] = C29.text_input('Comentário item 29:', "")
+		dic['Q30'] = Q30.selectbox('Item 30:', respostas)
+		dic['C30'] = C30.text_input('Comentário item 30:', "")
+		dic['Q31'] = Q31.selectbox('Item 31:', respostas)
+		dic['C31'] = C31.text_input('Comentário item 31:', "")
+		dic['Q32'] = Q32.selectbox('Item 32:', respostas)
+		dic['C32'] = C32.text_input('Comentário item 32:', "")
 		
 		submitted = st.form_submit_button('Enviar formulário')
 		
