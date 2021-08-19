@@ -574,6 +574,7 @@ def Liner_semanal():
 		T30, Q30, C30 = st.beta_columns([3,1,3])
 		T31, Q31, C31 = st.beta_columns([3,1,3])
 		T32, Q32, C32 = st.beta_columns([3,1,3])
+		T33, Q33, C33 = st.beta_columns([3,1,3])
 				
 		# Texto das questões
 		T00.info('Limpeza Conveyor #1 BALN e Pushers 1,2,3,4: 1- Limpar com pano umedecido  e álcool isopropílico.')
