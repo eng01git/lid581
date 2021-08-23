@@ -1599,6 +1599,7 @@ def conversion_diario():
 		T04, Q04, C04 = st.beta_columns([3,1,3])
 		T05, Q05, C05 = st.beta_columns([3,1,3])
 		T06, Q06, C06 = st.beta_columns([3,1,3])
+		T07, Q07, C07 = st.beta_columns([3,1,3])
 	
 		# Texto das questões
 		T00.info('Die set superior/inferior Tab Die: 1- Utilize ar comprimido e  escova de bronze para remover excesso de alumínio ou impurezas das ferramentas e matriz do tab die.  Limpar a parte interna da máquina e inspecionar possíveis anomalias ou anormalidades.')
@@ -1608,6 +1609,7 @@ def conversion_diario():
 		T04.info('Limpar câmara interna do MLT: 1- Limpar câmara interna somente com água.')
 		T05.info('Limpeza da mesa TAB Uncoiler: 1- Limpar com pano umedecido com álcool isopropílico e inspecionar possíveis anomalias ou anormalidades.')
 		T06.info('Limpeza nas proteções acrílicas na área do Downstacker: 1- Limpar com pano umedecido com álcool isopropílico  e inspecionar possíveis anomalias ou anormalidades.')
+		T07.info('Drenar o óleo da canaleta na parte frontal e traseira da máquina.')
 			
 		respostas = ['NOK', 'OK']
 
@@ -1636,6 +1638,8 @@ def conversion_diario():
 		dic['C05'] = C05.text_input('Comentário item 5:', "")
 		dic['Q06'] = Q06.selectbox('Item 6:', respostas)
 		dic['C06'] = C06.text_input('Comentário item 6:', "")
+		dic['Q07'] = Q07.selectbox('Item 7:', respostas)
+		dic['C07'] = C07.text_input('Comentário item 7:', "")
 		
 		submitted = st.form_submit_button('Enviar formulário')
 		
