@@ -1073,15 +1073,13 @@ def Autobagger_diario():
 		T02, Q02, C02 = st.beta_columns([3,1,3])
 		T03, Q03, C03 = st.beta_columns([3,1,3])
 		T04, Q04, C04 = st.beta_columns([3,1,3])
-		T05, Q05, C05 = st.beta_columns([3,1,3])
 		
 		# Texto das questões
 		T00.info('Recolhimento de tampas (Autobagger Área do piso no entorno do equipamento, é área do piso interior do equipamento.): 1- Limpeza utilizando uma vassoura, pá e soprador de ar. Com as mãos, retire as tampas que ficaram presas dentro dos trays do Auto Bagger. Utilize o soprador para retirar as tampas do chão em parte de difícil acesso e logo após deve-se varrer e recolher as tampas utilizando a pá, e colocar no balde de scrap.')
 		T01.info('Proteções e parte externa das máquinas (Área do pallettizer / autobagger): 1- Limpeza com pano umedecido em álcool isopropílico, nas proteções externas da máquina. Inspecionar toda a área se existe alguma anomalia.')
 		T02.info('Limpeza dos filtros (entrada e saída) - Autobagger e Palettizer Unidade de conservação (verificar a numeração em campo): 1- Limpeza de ambos os filtros (filtro de partículas e filtro coalescente) utilizando fluxo de ar e drenagem. Deve-se observar se os mesmos estão saturados, se caso estiver, devem ser trocados..')
 		T03.info('Temperatura do aquecedor (Autobagger Sistema de fechamento do Bag): 1- Realizar o check diário da correta especificação de temperatura.')
-		T04.info('Limpeza de todas as portas e teto da área do Autobagger. (Autobagger): 1- Limpar com pano  umedecido e álcool isopropílico.')
-		T05.info('Limpeza de todas as portas e teto da área do Autobagger: 1- Limpar com pano  umedecido e álcool isopropílico.')
+		T04.info('Limpeza de todas as portas da área do Autobagger. 1- Limpar com pano  umedecido e álcool isopropílico.')
 			
 		respostas = ['NOK', 'OK']
 
@@ -1106,8 +1104,6 @@ def Autobagger_diario():
 		dic['C03'] = C03.text_input('Comentário item 3:', "")
 		dic['Q04'] = Q04.selectbox('Item 4:', respostas)
 		dic['C04'] = C04.text_input('Comentário item 4:', "")
-		dic['Q05'] = Q05.selectbox('Item 5:', respostas)
-		dic['C05'] = C05.text_input('Comentário item 5:', "")
 		submitted = st.form_submit_button('Enviar formulário')
 		
 	# Envio do formulário
@@ -2673,8 +2669,7 @@ if __name__ == '__main__':
 				st.info('Q01) Proteções e parte externa das máquinas (Área do pallettizer / autobagger): 1- Limpeza com pano umedecido em álcool isopropílico, nas proteções externas da máquina. Inspecionar toda a área se existe alguma anomalia.')
 				st.info('Q02) Limpeza dos filtros (entrada e saída) - Autobagger e Palettizer Unidade de conservação (verificar a numeração em campo): 1- Limpeza de ambos os filtros (filtro de partículas e filtro coalescente) utilizando fluxo de ar e drenagem. Deve-se observar se os mesmos estão saturados, se caso estiver, devem ser trocados..')
 				st.info('Q03) Temperatura do aquecedor (Autobagger Sistema de fechamento do Bag): 1- Realizar o check diário da correta especificação de temperatura.')
-				st.info('Q04) Limpeza de todas as portas e teto da área do Autobagger. (Autobagger): 1- Limpar com pano  umedecido e álcool isopropílico.')
-				st.info('Q05) Limpeza de todas as portas e teto da área do Autobagger: 1- Limpar com pano  umedecido e álcool isopropílico.')
+				st.info('Q04) Limpeza de todas as portas da área do Autobagger. 1- Limpar com pano  umedecido e álcool isopropílico.')
 		
 		if form_selecionado == 'Autobagger semanal':
 			df_cil = load_forms_cil('autobagger_semanal')
