@@ -2423,6 +2423,11 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Liner semanal':
 		st.subheader('Liner semanal')
+		ln = df_cil_liner_s.tail(1)['I0']
+		lt = df_cil_liner_s.tail(1)['I1']
+		ld = df_cil_liner_s.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
 		
 		proc_LS = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_LS:
@@ -2431,6 +2436,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Shell diário':
 		st.subheader('Shell diário')
+		ln = df_cil_shell_d.tail(1)['I0']
+		lt = df_cil_shell_d.tail(1)['I1']
+		ld = df_cil_shell_d.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_SD = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_SD:
 			Shell_diario_proc()
@@ -2438,6 +2449,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Shell semanal':
 		st.subheader('Shell semanal')
+		ln = df_cil_shell_s.tail(1)['I0']
+		lt = df_cil_shell_s.tail(1)['I1']
+		ld = df_cil_shell_s.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_LS = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_LS:
 			Shell_semanal_proc()
@@ -2445,6 +2462,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Autobagger diário':
 		st.subheader('Autobagger diário')
+		ln = df_cil_auto_d.tail(1)['I0']
+		lt = df_cil_auto_d.tail(1)['I1']
+		ld = df_cil_auto_d.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_LS = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_LS:
 			Autobagger_diario_proc()
@@ -2452,6 +2475,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Autobagger semanal':
 		st.subheader('Autobagger semanal')
+		ln = df_cil_auto_s.tail(1)['I0']
+		lt = df_cil_auto_s.tail(1)['I1']
+		ld = df_cil_auto_s.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_LS = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_LS:
 			Autobagger_semanal_proc()
@@ -2459,6 +2488,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Autobagger mensal':
 		st.subheader('Autobagger mensal')
+		ln = df_cil_auto_m.tail(1)['I0']
+		lt = df_cil_auto_m.tail(1)['I1']
+		ld = df_cil_auto_m.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_LS = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_LS:
 			Autobagger_mensal_proc()
@@ -2466,6 +2501,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Conversion diário':
 		st.subheader('Conversion diário')
+		ln = df_cil_conv_d.tail(1)['I0']
+		lt = df_cil_conv_d.tail(1)['I1']
+		ld = df_cil_conv_d.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_CD = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_CD:
 			conversion_diario_proc()
@@ -2473,6 +2514,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Conversion semanal':
 		st.subheader('Conversion semanal')
+		ln = df_cil_conv_s.tail(1)['I0']
+		lt = df_cil_conv_s.tail(1)['I1']
+		ld = df_cil_conv_s.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_CS = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_CS:
 			conversion_semanal_proc()
@@ -2480,6 +2527,12 @@ if __name__ == '__main__':
 			
 	if func_escolhida == 'Conversion mensal':
 		st.subheader('Conversion mensal')
+		ln = df_cil_conv_m.tail(1)['I0']
+		lt = df_cil_conv_m.tail(1)['I1']
+		ld = df_cil_conv_m.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_CM = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_CM:
 			conversion_mensal_proc()
@@ -2487,6 +2540,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Balancer diário':
 		st.subheader('Balancer diário')
+		ln = df_cil_bala_d.tail(1)['I0']
+		lt = df_cil_bala_d.tail(1)['I1']
+		ld = df_cil_bala_d.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_BD = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_BD:
 			balancer_diario_proc()
@@ -2494,6 +2553,12 @@ if __name__ == '__main__':
 		
 	if func_escolhida == 'Balancer semanal':
 		st.subheader('Balancer semanal')
+		ln = df_cil_bala_s.tail(1)['I0']
+		lt = df_cil_bala_s.tail(1)['I1']
+		ld = df_cil_bala_s.tail(1)['I2']
+		ultimo_cil = """Último cil realizado por %s no dia **%s (%s)**""" %(ln.iloc[0], ld.iloc[0].strftime("%d/%m/%Y às %H:%M:%S"), lt.iloc[0])
+		st.success(ultimo_cil)
+		
 		proc_BS = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_BS:
 			balancer_semanal_proc()
