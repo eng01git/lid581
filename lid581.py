@@ -2410,7 +2410,9 @@ if __name__ == '__main__':
 	
 	if func_escolhida == 'Liner diário':
 		st.subheader('Liner diário')
-		st.write(df_cil_liner_d.tail(1)[['I0', 'I1', 'I2']])
+		
+		#ultimo_cil = "{} no dia {} as {} ({})".format
+		st.write(df_cil_liner_d.tail(1)['I0'])
 		
 		proc_LD = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_LD:
