@@ -2413,7 +2413,7 @@ if __name__ == '__main__':
 		ln = df_cil_liner_d.tail(1)['I0']
 		lt = df_cil_liner_d.tail(1)['I1']
 		ld = df_cil_liner_d.tail(1)['I2']
-		ultimo_cil = "Ultimo cil realizado: {} no dia {} ({})".format(ld.iloc[0,0], ld.iloc[0,0], lt.iloc[0,0])
+		ultimo_cil = "Ultimo cil realizado: {v1} no dia {v2} ({v3})".format(v1=ld.iloc[0,0], v2=ld.iloc[0,0], v3=lt.iloc[0,0])
 		st.write(ultimo_cil)
 		
 		proc_LD = st.checkbox('Deseja visualizar os procedimentos?')	
