@@ -2387,11 +2387,19 @@ if __name__ == '__main__':
 	turnos = ['Turno A', 'Turno B', 'Turno C']
 	nomes = list(usuarios.iloc[:,2])
 
-	# Imagem
-	#col1_, col2_, col3_ = st.beta_columns([1,1,1])
-	#col1_.write('')
-	#col2_.image('Ambev.jpeg', width=250)
-	#col3_.write('')
+	# coleta os formularios do banco
+	df_cil_liner_d = load_forms_cil('Liner_diario')
+	df_cil_shell_d = load_forms_cil('shell_diario')
+	df_cil_auto_d = load_forms_cil('autobagger_diario')
+	df_cil_conv_d = load_forms_cil('conversion_diario')
+	df_cil_bala_d = load_forms_cil('balancer_diario')
+	df_cil_liner_s = load_forms_cil('Liner_semanal')
+	df_cil_shell_s = load_forms_cil('shell_semanal')
+	df_cil_auto_s = load_forms_cil('autobagger_semanal')
+	df_cil_conv_s = load_forms_cil('conversion_semanal')
+	df_cil_bala_s = load_forms_cil('balancer_semanal')
+	df_cil_auto_m = load_forms_cil('autobagger_mensal')
+	df_cil_conv_m = load_forms_cil('conversion_mensal')	
 
 	# Lista vazia para input dos dados do formulário
 	dic = {} #dicionario
@@ -2955,7 +2963,6 @@ if __name__ == '__main__':
 		###############################################
 		
 		# liner diario
-		df_cil_liner_d = load_forms_cil('Liner_diario')
 		liner_d = df_cil_liner_d.copy()
 		liner_d['I2'] = liner_d['I2'].dt.date
 		liner_d = liner_d.rename(columns={'I2': 'Datas'})
@@ -2966,7 +2973,6 @@ if __name__ == '__main__':
 		liner_d['Liner'] = round(liner_d['Liner'],2) 
 		
 		# Shell diario
-		df_cil_shell_d = load_forms_cil('shell_diario')
 		shell_d = df_cil_shell_d.copy()
 		shell_d['I2'] = shell_d['I2'].dt.date
 		shell_d = shell_d.rename(columns={'I2': 'Datas'})
@@ -2978,7 +2984,6 @@ if __name__ == '__main__':
 		shell_d['Shell'] = round(shell_d['Shell'],2) 
 		
 		# autobagger diario
-		df_cil_auto_d = load_forms_cil('autobagger_diario')
 		auto_d = df_cil_auto_d.copy()
 		auto_d['I2'] = auto_d['I2'].dt.date
 		auto_d = auto_d.rename(columns={'I2': 'Datas'})
@@ -2990,7 +2995,6 @@ if __name__ == '__main__':
 		auto_d['Autobagger'] = round(auto_d['Autobagger'],2) 
 		
 		# conversion diario
-		df_cil_conv_d = load_forms_cil('conversion_diario')
 		conv_d = df_cil_conv_d.copy()
 		conv_d['I2'] = conv_d['I2'].dt.date
 		conv_d = conv_d.rename(columns={'I2': 'Datas'})
@@ -3002,7 +3006,6 @@ if __name__ == '__main__':
 		conv_d['Conversion'] = round(conv_d['Conversion'],2) 
 				
 		# Balancer diario
-		df_cil_bala_d = load_forms_cil('balancer_diario')
 		bala_d = df_cil_bala_d.copy()
 		bala_d['I2'] = bala_d['I2'].dt.date
 		bala_d = bala_d.rename(columns={'I2': 'Datas'})
@@ -3041,7 +3044,6 @@ if __name__ == '__main__':
 		cil_semanal['Semana'] = [*range(1, 56, 1)]
 		
 		# liner semanal
-		df_cil_liner_s = load_forms_cil('Liner_semanal')
 		liner_s = df_cil_liner_s.copy()
 		liner_s['Semana'] = liner_s['I2'].dt.strftime('%V')
 		liner_s['Semana'] = liner_s['Semana'].astype(int)
@@ -3051,7 +3053,6 @@ if __name__ == '__main__':
 		liner_s = liner_s.groupby(['Semanas']).mean()
 		
 		# shell semanal
-		df_cil_shell_s = load_forms_cil('shell_semanal')
 		shell_s = df_cil_shell_s.copy()
 		shell_s['Semana'] = shell_s['I2'].dt.strftime('%V')
 		shell_s['Semana'] = shell_s['Semana'].astype(int)
@@ -3061,7 +3062,6 @@ if __name__ == '__main__':
 		shell_s = shell_s.groupby(['Semanas']).mean()	
 		
 		# autobagger semanal
-		df_cil_auto_s = load_forms_cil('autobagger_semanal')
 		auto_s = df_cil_auto_s.copy()
 		auto_s['Semana'] = auto_s['I2'].dt.strftime('%V')
 		auto_s['Semana'] = auto_s['Semana'].astype(int)
@@ -3071,7 +3071,6 @@ if __name__ == '__main__':
 		auto_s = auto_s.groupby(['Semanas']).mean()		
 		
 		# conversion semanal
-		df_cil_conv_s = load_forms_cil('conversion_semanal')
 		conv_s = df_cil_conv_s.copy()
 		conv_s['Semana'] = conv_s['I2'].dt.strftime('%V')
 		conv_s['Semana'] = conv_s['Semana'].astype(int)
@@ -3081,7 +3080,6 @@ if __name__ == '__main__':
 		conv_s = conv_s.groupby(['Semanas']).mean()	
 		
 		# balancer semanal
-		df_cil_bala_s = load_forms_cil('balancer_semanal')
 		bala_s = df_cil_bala_s.copy()
 		bala_s['Semana'] = bala_s['I2'].dt.strftime('%V')
 		bala_s['Semana'] = bala_s['Semana'].astype(int)
@@ -3113,7 +3111,6 @@ if __name__ == '__main__':
 		cil_mensal['Mes'] = [*range(1, 12, 1)]
 		
 		# autobagger semanal
-		df_cil_auto_m = load_forms_cil('autobagger_mensal')
 		auto_m = df_cil_auto_m.copy()
 		auto_m['Mes'] = auto_m['I2'].dt.month
 		auto_m['Mes'] = auto_m['Mes'].astype(int)
@@ -3123,7 +3120,6 @@ if __name__ == '__main__':
 		auto_m = auto_m.groupby(['Meses']).mean()	
 		
 		# autobagger semanal
-		df_cil_conv_m = load_forms_cil('conversion_mensal')
 		conv_m = df_cil_conv_m.copy()
 		conv_m['Mes'] = conv_m['I2'].dt.month
 		conv_m['Mes'] = conv_m['Mes'].astype(int)
