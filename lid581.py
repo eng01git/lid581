@@ -2410,6 +2410,7 @@ if __name__ == '__main__':
 	
 	if func_escolhida == 'Liner diário':
 		st.subheader('Liner diário')
+		st.write(df_cil_liner_d.tail(1))
 		
 		proc_LD = st.checkbox('Deseja visualizar os procedimentos?')	
 		if proc_LD:
