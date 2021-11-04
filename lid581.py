@@ -589,6 +589,7 @@ def Liner_semanal():
 		T31, Q31, C31 = st.beta_columns([3,1,3])
 		T32, Q32, C32 = st.beta_columns([3,1,3])
 		T33, Q33, C33 = st.beta_columns([3,1,3])
+		T34, Q34, C34 = st.beta_columns([3,1,3])
 				
 		# Texto das questões
 		T00.info('Limpeza Conveyor #1 BALN e Pushers 1,2,3,4: 1- Limpar com pano umedecido  e álcool isopropílico.')
@@ -625,6 +626,7 @@ def Liner_semanal():
 		T31.info('Realizar 5S geral da área.')
 		T32.info('Limpar externamente o tank. 1-Limpar com pano umedecido e álcool isopropílico.')
 		T33.info('Daytank: Limepeza do filtro de selante na alimentação do Tanque: 1-Utilizar água e pistola de ar.')
+		T34.info('Realizar a lubrificação de acordo com o checklist.')
 				
 		respostas = ['OK', 'NOK']
 
@@ -707,7 +709,9 @@ def Liner_semanal():
 		dic['C32'] = C32.text_input('Comentário item 32:', "")
 		dic['Q33'] = Q33.radio('Item 33:', respostas)
 		dic['C33'] = C33.text_input('Comentário item 33:', "")
-			 
+		dic['Q34'] = Q34.radio('Item 34:', respostas)
+		dic['C34'] = C34.text_input('Comentário item 34:', "")
+		
 		submitted = st.form_submit_button('Enviar formulário')
 		
 	# Envio do formulário
@@ -960,6 +964,7 @@ def Shell_semanal():
 		T18, Q18, C18 = st.beta_columns([3,1,3])
 		T19, Q19, C19 = st.beta_columns([3,1,3])
 		T20, Q20, C20 = st.beta_columns([3,1,3])
+		T21, Q21, C21 = st.beta_columns([3,1,3])
 
 		
 		# Texto das questões
@@ -984,6 +989,7 @@ def Shell_semanal():
 		T18.info('GFS Bloqueio de energia: Execute o bloqueio de energia conforme o padrão e testar a eficácia do mesmo. Preparar os materiais conforme a necessidade.')
 		T19.info('Limpeza parte externa da máquina: Limpar parte externa do equipamento utilizando pano umedecido com álcool isopropílico.')
 		T20.info('Unidade de conservação de Ar: Drenar a água do filtro da linha pneumática.')
+		T21.info('Realizar a lubrificação de acordo com o checklist.')
 
 			
 		respostas = ['OK', 'NOK']
@@ -1041,6 +1047,8 @@ def Shell_semanal():
 		dic['C19'] = C19.text_input('Comentário item 19:', "")
 		dic['Q20'] = Q20.radio('Item 20:', respostas)
 		dic['C20'] = C20.text_input('Comentário item 20:', "")
+		dic['Q21'] = Q21.radio('Item 21:', respostas)
+		dic['C21'] = C21.text_input('Comentário item 21:', "")
 		
 		submitted = st.form_submit_button('Enviar formulário')
 		
@@ -1330,6 +1338,7 @@ def Autobagger_mensal():
 		T06, Q06, C06 = st.beta_columns([3,1,3])
 		T07, Q07, C07 = st.beta_columns([3,1,3])
 		T08, Q08, C08 = st.beta_columns([3,1,3])
+		T09, Q09, C09 = st.beta_columns([3,1,3])
 		
 		# Texto das questões
 		T00.info('Guia linear (pivot bag tray) - Sistema de empacotamento (autobagger): Realizar limpeza/inspeção/lubrificação do Rolamento, tirando excesso de lubrificante e sujidades com o equipamento parado, devidamente com o bloqueio Loto.')
@@ -1341,6 +1350,7 @@ def Autobagger_mensal():
 		T06.info('Guia linear (Carriage) - Sistema de paletização do pallet: Realizar limpeza/inspeção/lubrificação do Rolamento, tirando excesso de lubrificante e sujidades com o equipamento parado, devidamente com o bloqueio Loto.')
 		T07.info('Corrente transporte (Pallet conveyor) - Sistema de paletização do pallet: Realizar limpeza / inspeção / lubrificação do conjunto de transmissão da corrente, tirando o excesso de lubrificante e sujidades com o equipamento parado devidamente com o bloqueio loto.')
 		T08.info('Corrente motora ( Pallet conveyor) - Sistema de paletização do pallet: Realizar limpeza / inspeção / lubrificação do conjunto de transmissão da corrente, tirando o excesso de lubrificante e sujidades com o equipamento parado devidamente com o bloqueio loto.')
+		T09.info('Realizar a lubrificação de acordo com o checklist.')
 		
 		respostas = ['OK', 'NOK']
 
@@ -1373,6 +1383,8 @@ def Autobagger_mensal():
 		dic['C07'] = C07.text_input('Comentário item 7:', "")
 		dic['Q08'] = Q08.radio('Item 8:', respostas)
 		dic['C08'] = C08.text_input('Comentário item 8:', "")
+		dic['Q09'] = Q09.radio('Item 9:', respostas)
+		dic['C09'] = C09.text_input('Comentário item 9:', "")
 		submitted = st.form_submit_button('Enviar formulário')
 		
 	# Envio do formulário
@@ -1466,11 +1478,13 @@ def balancer_diario():
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
+		T03, Q03, C03 = st.beta_columns([3,1,3])
 
 		# Texto das questões
 		T00.info('Proteções e partes externas da máquina: 1- Limpeza com pano umedecido em álcool isopropílico, nas proteções externas da máquina. Inspecionar toda a área se existe  alguma anomalia.')
 		T01.info('Piso do interior da máquina: 1- Realizar a limpeza dos pontos de difícil acesso do piso e parte inferior da máquina com um soprador. Após soprar todas as tampas, utilizar vassoura e pá para recolher  e descarta-las em local adequado.')
 		T02.info('Piso exterior da máquina: 1- Executar limpeza nos pontos externos de difícil acesso na parte inferior da máquina da máquina.')
+		T03.info('Realizar a lubrificação de acordo com o checklist.')
 			
 		respostas = ['OK', 'NOK']
 
@@ -1491,7 +1505,8 @@ def balancer_diario():
 		dic['C01'] = C01.text_input('Comentário item 1:', "")
 		dic['Q02'] = Q02.radio('Item 2:', respostas)
 		dic['C02'] = C02.text_input('Comentário item 2:', "")
-		
+		dic['Q03'] = Q03.radio('Item 3:', respostas)
+		dic['C03'] = C03.text_input('Comentário item 3:', "")		
 		submitted = st.form_submit_button('Enviar formulário')
 		
 	# Envio do formulário
@@ -1556,7 +1571,8 @@ def balancer_semanal():
 		T03, Q03, C03 = st.beta_columns([3,1,3])
 		T04, Q04, C04 = st.beta_columns([3,1,3])
 		T05, Q05, C05 = st.beta_columns([3,1,3])
-		
+		T06, Q06, C06 = st.beta_columns([3,1,3])
+				
 		# Texto das questões
 		T00.info('Limpeza dos trilhos de transporte das tampas: 1- Limpar os trilhos com pano seco, após a limpeza observar se existem partes soltas ou com folga.')
 		T01.info('Limpar o braço do robô: 1- Limpeza com pano umedecido em álcool isopropílico, nas articulações e espelhos dos sensores. Inspecionar toda a área se existe  alguma anomalia.')
@@ -1564,6 +1580,7 @@ def balancer_semanal():
 		T03.info("Limpeza do sistema de armazenamento / transferência de tampas nas tray's: 1- Executar limpeza do excesso de graxa dos rolamentos, mancais, limpeza dos rolos e correntes de transmissão. Limpar mesa de transferência e unidade de conservação.")
 		T04.info('Finalizar a limpeza e colocar a máquina em operação: 1- Após o procedimento de limpeza conferir se não há componentes esquecidos dentro da máquina. Deve-se garantir que não haja ninguém dentro do perímetro de proteção da máquina. Seguir todo o procedimento de partida após intervenção na máquina.')
 		T05.info('Limpeza do filtro AIRCON painel elétrico, na alimentação de entrada: 1- Utilizar pistola de ar')
+		T06.info('Realizar a lubrificação de acordo com o checklist')
 
 			
 		respostas = ['OK', 'NOK']
@@ -1591,7 +1608,9 @@ def balancer_semanal():
 		dic['C04'] = C04.text_input('Comentário item 4:', "")
 		dic['Q05'] = Q05.radio('Item 5:', respostas)
 		dic['C05'] = C05.text_input('Comentário item 5:', "")
-		
+		dic['Q06'] = Q06.radio('Item 6:', respostas)
+		dic['C06'] = C06.text_input('Comentário item 6:', "")
+
 		submitted = st.form_submit_button('Enviar formulário')
 		
 	# Envio do formulário
@@ -1800,6 +1819,7 @@ def conversion_semanal():
 		T21, Q21, C21 = st.beta_columns([3,1,3])
 		T22, Q22, C22 = st.beta_columns([3,1,3])
 		T23, Q23, C23 = st.beta_columns([3,1,3])
+		T24, Q24, C24 = st.beta_columns([3,1,3])
 		
 		# Texto das questões
 		T00.info('''Limpeza dentro da máquina: 
@@ -1832,6 +1852,7 @@ def conversion_semanal():
 		T21.info('Inspecionar e limpar Conveyor #2 CP-PK e Pushers 1,2: 1-Inspecionar e limpar com pano umedecido com álcool isopropílico.')
 		T22.info('Inspecionar e limpar Conveyor #3 CP-PK e Pushers 1,2: 1-Inspecionar e limpar com pano umedecido com álcool isopropílico.')
 		T23.info('Inspecionar e limpar Conveyor #4 CP-PK e Pushers 1,2: 1-Inspecionar e limpar com pano umedecido com álcool isopropílico.')
+		T24.info('Realizar a lubrificação de acordo com o checklist.')
 			
 		respostas = ['OK', 'NOK']
 
@@ -1894,6 +1915,8 @@ def conversion_semanal():
 		dic['C22'] = C22.text_input('Comentário item 22:', "")
 		dic['Q23'] = Q23.radio('Item 23:', respostas)
 		dic['C23'] = C23.text_input('Comentário item 23:', "")
+		dic['Q24'] = Q24.radio('Item 24:', respostas)
+		dic['C24'] = C24.text_input('Comentário item 24:', "")
 		
 		submitted = st.form_submit_button('Enviar formulário')
 		
@@ -1972,6 +1995,7 @@ def conversion_mensal():
 		T11, Q11, C11 = st.beta_columns([3,1,3])
 		T12, Q12, C12 = st.beta_columns([3,1,3])
 		T13, Q13, C13 = st.beta_columns([3,1,3])
+		T14, Q14, C14 = st.beta_columns([3,1,3])
 		
 		# Texto das questões
 		T00.info('Válvula direcional feed roll (tab feed roll): Inspeção das vedações afim de verificar algum desgaste ou vazamento.')
@@ -1988,6 +2012,7 @@ def conversion_mensal():
 		T11.info('Mangueiras e conexões pneumáticas: Verificar se há vazamentos de ar na s mangueiras e conexões pneumáticas')
 		T12.info('Sistema de vácuo: Inspecionar quanto a integridade e executar a limpeza do mesmo.')
 		T13.info('Correia de transporte do conveyor: Inspecionar quanto a integridade e executar a limpeza do mesmo.')
+		T14.info('Realizar a lubrificação de acordo com o checklist.')
 			
 		respostas = ['OK', 'NOK']
 
@@ -2030,6 +2055,8 @@ def conversion_mensal():
 		dic['C12'] = C12.text_input('Comentário item 12:', "")
 		dic['Q13'] = Q13.radio('Item 13:', respostas)
 		dic['C13'] = C13.text_input('Comentário item 13:', "")
+		dic['Q14'] = Q14.radio('Item 14:', respostas)
+		dic['C14'] = C14.text_input('Comentário item 14:', "")
 		
 		submitted = st.form_submit_button('Enviar formulário')
 		
