@@ -434,7 +434,7 @@ def Liner_diario():
     
 		# Define a organização das colunas
 		# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		c0, c1, c2 = beta_columns([3,1,3])
+		c0, c1, c2 = st.beta_columns([3,1,3])
 		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
 		hora_atual = c1.time_input('Horário do Cil')
 		data_form = c2.date_input('Data do Cil')
