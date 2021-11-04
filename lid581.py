@@ -439,7 +439,8 @@ def Liner_diario():
 		hora_atual = c1.time_input('Horário do Cil')
 		data_form = c2.date_input('Data do Cil')
 		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
-		
+
+
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -466,6 +467,7 @@ def Liner_diario():
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
 		# hora_atual = datetime.now(tz).time()
+
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -495,12 +497,6 @@ def Liner_diario():
 		
 	# Envio do formulário
 	if submitted:
-# 		st.write(data_form)
-# 		st.write(hora_atual)
-# 		st.write(str(data_form))
-# 		st.write(str(hora_atual).split('.')[0])
-# 		st.write(dic['I1'])
-# 		st.write(dic['I2'])
 
 		# Limpa cache
 		caching.clear_cache()
@@ -552,7 +548,13 @@ def Liner_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -627,8 +629,8 @@ def Liner_semanal():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -759,7 +761,13 @@ def Shell_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -804,8 +812,8 @@ def Shell_diario():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -924,7 +932,13 @@ def Shell_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -975,8 +989,8 @@ def Shell_semanal():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1079,7 +1093,13 @@ def Autobagger_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1096,8 +1116,8 @@ def Autobagger_diario():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1172,7 +1192,13 @@ def Autobagger_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1191,8 +1217,8 @@ def Autobagger_semanal():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1287,7 +1313,13 @@ def Autobagger_mensal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1313,8 +1345,8 @@ def Autobagger_mensal():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1424,7 +1456,13 @@ def balancer_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1437,8 +1475,8 @@ def balancer_diario():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1505,7 +1543,13 @@ def balancer_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1525,9 +1569,8 @@ def balancer_semanal():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1599,7 +1642,13 @@ def conversion_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1622,8 +1671,8 @@ def conversion_diario():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1720,7 +1769,13 @@ def conversion_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1781,8 +1836,8 @@ def conversion_semanal():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1896,7 +1951,13 @@ def conversion_mensal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes)
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+        
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
 		T02, Q02, C02 = st.beta_columns([3,1,3])
@@ -1931,8 +1992,8 @@ def conversion_mensal():
 		respostas = ['NOK', 'OK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
