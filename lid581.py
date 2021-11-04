@@ -1213,6 +1213,7 @@ def Autobagger_semanal():
 		T03, Q03, C03 = st.beta_columns([3,1,3])
 		T04, Q04, C04 = st.beta_columns([3,1,3])
 		T05, Q05, C05 = st.beta_columns([3,1,3])
+		T06, Q06, C06 = st.beta_columns([3,1,3])
 		
 		# Texto das questões
 		T00.info('Limpeza dos trilhos de transporte das tampas: 1- Limpar os trilhos com pano seco, após a limpeza observar se existem partes soltas ou com folga.')
@@ -1221,6 +1222,7 @@ def Autobagger_semanal():
 		T03.info('Limpeza do sistema de armazenamento / transferência de tampas nas trays: 1- Executar limpeza do excesso de graxa dos rolamentos, mancais, limpeza dos rolos e correntes de transmissão. Limpar mesa de transferência e unidade de conservação.')
 		T04.info('Finalizar a limpeza e colocar a máquina em operação: 1- Após o procedimento de limpeza conferir se não há componentes esquecidos dentro da máquina. Deve-se garantir que não haja ninguém dentro do perímetro de proteção da máquina. Seguir todo o procedimento de partida após intervenção na máquina.')
 		T05.info('Limpeza do filtro AIRCON painel elétrico, na alimentação de entrada: 1- Utilizar pistola de ar.')
+		T06.info('Realizar a lubrificação de acordo com o checklist.')
 			
 		respostas = ['OK', 'NOK']
 
@@ -1247,6 +1249,8 @@ def Autobagger_semanal():
 		dic['C04'] = C04.text_input('Comentário item 4:', "")
 		dic['Q05'] = Q05.radio('Item 5:', respostas)
 		dic['C05'] = C05.text_input('Comentário item 5:', "")
+		dic['Q06'] = Q06.radio('Item 6:', respostas)
+		dic['C06'] = C06.text_input('Comentário item 6:', "")
 		submitted = st.form_submit_button('Enviar formulário')
 		
 	# Envio do formulário
