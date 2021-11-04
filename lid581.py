@@ -438,7 +438,7 @@ def Liner_diario():
 		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
 		hora_atual = c1.time_input('Horário do Cil')
 		data_form = c2.date_input('Data do Cil')
-		#dic['I2'] = 
+		#dic['I2'] = str(data_form
 		
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -495,29 +495,35 @@ def Liner_diario():
 		
 	# Envio do formulário
 	if submitted:
+		st.write(data_form)
+		st.write(hora_atual)
+		st.write(str(data_form))
+		st.write(str(hora_atual))
+# 		st.write(dic['I1'])
+# 		st.write(dic['I2'])
 
-		# Limpa cache
-		caching.clear_cache()
+# 		# Limpa cache
+# 		caching.clear_cache()
 		
-		# Transforma dados do formulário em um dicionário
-		keys_values = dic.items()
-		new_d = {str(key): str(value) for key, value in keys_values}
+# 		# Transforma dados do formulário em um dicionário
+# 		keys_values = dic.items()
+# 		new_d = {str(key): str(value) for key, value in keys_values}
 
-		# Verifica campos não preenchidos e os modifica
-		for key, value in new_d.items():
-			if (value == '') or value == '[]':
-				new_d[key] = '-'
+# 		# Verifica campos não preenchidos e os modifica
+# 		for key, value in new_d.items():
+# 			if (value == '') or value == '[]':
+# 				new_d[key] = '-'
 		
-		# Define o nome do documento a ser armazenado no banco
-		val_documento = new_d['I2'] + new_d['I1']
+# 		# Define o nome do documento a ser armazenado no banco
+# 		val_documento = new_d['I2'] + new_d['I1']
 
-		# Armazena no banco
-		try:
-			doc_ref = db.collection("Liner_diario").document(val_documento)
-			doc_ref.set(new_d)
-			st.success('Formulário armazenado com sucesso!')
-		except:
-			st.error('Falha ao armazenar formulário, tente novamente ou entre em contato com suporte!')
+# 		# Armazena no banco
+# 		try:
+# 			doc_ref = db.collection("Liner_diario").document(val_documento)
+# 			doc_ref.set(new_d)
+# 			st.success('Formulário armazenado com sucesso!')
+# 		except:
+# 			st.error('Falha ao armazenar formulário, tente novamente ou entre em contato com suporte!')
 
 def Liner_diario_proc():
 	with st.beta_expander('Pontos'):
