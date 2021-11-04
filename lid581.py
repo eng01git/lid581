@@ -2463,10 +2463,10 @@ if __name__ == '__main__':
 	# coleta os formularios do banco
 	df_cil_liner_d = load_forms_cil('Liner_diario')
 	df_cil_shell_d = load_forms_cil('shell_diario')
-	df_cil_auto_d = load_forms_cil('autobagger_diario')
-# 	df_cil_auto_d = df_cil_auto.copy()
-# 	df_cil_auto_d['Q05'] = 'OK'
-# 	df_cil_auto_d['C05'] = '-'
+	df_cil_auto = load_forms_cil('autobagger_diario')
+	df_cil_auto_d = df_cil_auto.copy()
+	df_cil_auto_d['Q05'] = 'OK'
+	df_cil_auto_d['C05'] = '-'
 	#st.write(df_cil_auto_d)
 	df_cil_conv_d = load_forms_cil('conversion_diario')
 	df_cil_bala_d = load_forms_cil('balancer_diario')
@@ -2810,12 +2810,15 @@ if __name__ == '__main__':
 				st.info('Q20) Unidade de conservação de Ar: Drenar a água do filtro da linha pneumática.')
 			
 		if form_selecionado == 'Autobagger turno':
-			df_cil = load_forms_cil('autobagger_diario')
+			df_cil_aux = load_forms_cil('autobagger_diario')
+			df_cil = df_cil_aux.copy()
+			df_cil['Q05'] = 'OK'
+			df_cil['C05'] = '-'
 			
 			# Lista e ordena as colunas do dataframe
 			lista_colunas = ['I2', 'I0', 'I1',
-					 'Q00', 'Q01', 'Q02', 'Q03',  'Q04',
-					 'C00', 'C01', 'C02', 'C03',  'C04',]
+					 'Q00', 'Q01', 'Q02', 'Q03',  'Q04', 'Q05'
+					 'C00', 'C01', 'C02', 'C03',  'C04', 'C05']
 			df_cil = df_cil.reindex(columns=lista_colunas)
 			
 			with st.beta_expander('Visualizar as questões?'):
