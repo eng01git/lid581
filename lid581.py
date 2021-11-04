@@ -2463,7 +2463,8 @@ if __name__ == '__main__':
 	# coleta os formularios do banco
 	df_cil_liner_d = load_forms_cil('Liner_diario')
 	df_cil_shell_d = load_forms_cil('shell_diario')
-	df_cil_auto_d = load_forms_cil('autobagger_diario')
+	df_cil_auto = load_forms_cil('autobagger_diario')
+	df_cil_auto_d = df_cil_auto.copy()
 	df_cil_auto_d['Q05'] = 'OK'
 	df_cil_auto_d['C05'] = '-'
 	#st.write(df_cil_auto_d)
