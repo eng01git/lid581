@@ -626,7 +626,7 @@ def Liner_semanal():
 		T32.info('Limpar externamente o tank. 1-Limpar com pano umedecido e álcool isopropílico.')
 		T33.info('Daytank: Limepeza do filtro de selante na alimentação do Tanque: 1-Utilizar água e pistola de ar.')
 				
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -809,7 +809,7 @@ def Shell_diario():
 		T17.info('Limpeza dos segmentos do Curler: Utilizando uma haste de latão, retire todas as tampas presas nos segmentos do Curler (se houver). Em seguida, aplique ar comprimido e limpe todos os segmentos com um pano umedecido em álcool isopropílico.')
 		T18.info('Limpeza externa: "Utilizando um pano umedecido em álcool isopropílico, limpe toda a parte externa do Curler como mesa, estrutura externa (com exceção das tampas de acrílico) a fim de remover toda a poeira presente. Para limpar as tampas de acrílico, utilize um pano seco e limpo a fim de remover toda a sujidade existente."')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -986,7 +986,7 @@ def Shell_semanal():
 		T20.info('Unidade de conservação de Ar: Drenar a água do filtro da linha pneumática.')
 
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1113,7 +1113,7 @@ def Autobagger_diario():
 		T03.info('Temperatura do aquecedor (Autobagger Sistema de fechamento do Bag): 1- Realizar o check turno da correta especificação de temperatura.')
 		T04.info('Limpeza de todas as portas da área do Autobagger. 1- Limpar com pano  umedecido e álcool isopropílico.')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1214,7 +1214,7 @@ def Autobagger_semanal():
 		T04.info('Finalizar a limpeza e colocar a máquina em operação: 1- Após o procedimento de limpeza conferir se não há componentes esquecidos dentro da máquina. Deve-se garantir que não haja ninguém dentro do perímetro de proteção da máquina. Seguir todo o procedimento de partida após intervenção na máquina.')
 		T05.info('Limpeza do filtro AIRCON painel elétrico, na alimentação de entrada: 1- Utilizar pistola de ar.')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1342,7 +1342,7 @@ def Autobagger_mensal():
 		T07.info('Corrente transporte (Pallet conveyor) - Sistema de paletização do pallet: Realizar limpeza / inspeção / lubrificação do conjunto de transmissão da corrente, tirando o excesso de lubrificante e sujidades com o equipamento parado devidamente com o bloqueio loto.')
 		T08.info('Corrente motora ( Pallet conveyor) - Sistema de paletização do pallet: Realizar limpeza / inspeção / lubrificação do conjunto de transmissão da corrente, tirando o excesso de lubrificante e sujidades com o equipamento parado devidamente com o bloqueio loto.')
 		
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1472,7 +1472,7 @@ def balancer_diario():
 		T01.info('Piso do interior da máquina: 1- Realizar a limpeza dos pontos de difícil acesso do piso e parte inferior da máquina com um soprador. Após soprar todas as tampas, utilizar vassoura e pá para recolher  e descarta-las em local adequado.')
 		T02.info('Piso exterior da máquina: 1- Executar limpeza nos pontos externos de difícil acesso na parte inferior da máquina da máquina.')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1566,7 +1566,7 @@ def balancer_semanal():
 		T05.info('Limpeza do filtro AIRCON painel elétrico, na alimentação de entrada: 1- Utilizar pistola de ar')
 
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1668,7 +1668,7 @@ def conversion_diario():
 		T06.info('Limpeza nas proteções acrílicas na área do Downstacker: 1- Limpar com pano umedecido com álcool isopropílico  e inspecionar possíveis anomalias ou anormalidades.')
 		T07.info('Drenar o óleo da canaleta na parte frontal e traseira da máquina.')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1833,7 +1833,7 @@ def conversion_semanal():
 		T22.info('Inspecionar e limpar Conveyor #3 CP-PK e Pushers 1,2: 1-Inspecionar e limpar com pano umedecido com álcool isopropílico.')
 		T23.info('Inspecionar e limpar Conveyor #4 CP-PK e Pushers 1,2: 1-Inspecionar e limpar com pano umedecido com álcool isopropílico.')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -1989,7 +1989,7 @@ def conversion_mensal():
 		T12.info('Sistema de vácuo: Inspecionar quanto a integridade e executar a limpeza do mesmo.')
 		T13.info('Correia de transporte do conveyor: Inspecionar quanto a integridade e executar a limpeza do mesmo.')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
