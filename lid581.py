@@ -462,7 +462,7 @@ def Liner_diario():
 		T07.info('Limpeza nos furos do Hopper: 1-Limpeza utilizando pano umedecido com álcool isopropílico.')
 		T08.info('Limpeza na calha de rejeito das  correias transportadoras: 1-Limpeza utilizando pano umedecido com álcool isopropílico.')
 			
-		respostas = ['NOK', 'OK']
+		respostas = ['OK', 'NOK']
 
 		# Questões
 		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
@@ -3161,7 +3161,7 @@ if __name__ == '__main__':
 		
 		# filtro para as datas
 		col1, col2 = st.beta_columns(2)
-		inicio_filtro = col1.date_input("Início (ano/mês/dia)", datetime(2021, 7, 1))
+		inicio_filtro = col1.date_input("Início (ano/mês/dia)", datetime(2021, 9, 1))
 		fim_filtro = col2.date_input("Fim (ano/mês/dia)")
 		
 		# Cria dataframe vazio para as datas
