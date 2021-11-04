@@ -438,7 +438,7 @@ def Liner_diario():
 		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
 		hora_atual = c1.time_input('Horário do Cil')
 		data_form = c2.date_input('Data do Cil')
-		#dic['I2'] = str(data_form
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
 		
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -499,8 +499,8 @@ def Liner_diario():
 		st.write(hora_atual)
 		st.write(str(data_form))
 		st.write(str(hora_atual).split('.')[0])
-# 		st.write(dic['I1'])
-# 		st.write(dic['I2'])
+		st.write(dic['I1'])
+		st.write(dic['I2'])
 
 # 		# Limpa cache
 # 		caching.clear_cache()
