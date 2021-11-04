@@ -2464,7 +2464,9 @@ if __name__ == '__main__':
 	df_cil_liner_d = load_forms_cil('Liner_diario')
 	df_cil_shell_d = load_forms_cil('shell_diario')
 	df_cil_auto_d = load_forms_cil('autobagger_diario')
-	st.write(df_cil_auto_d)
+	df_cil_auto_d['Q05'] = 'OK'
+	df_cil_auto_d['C05'] = '-'
+	#st.write(df_cil_auto_d)
 	df_cil_conv_d = load_forms_cil('conversion_diario')
 	df_cil_bala_d = load_forms_cil('balancer_diario')
 	df_cil_liner_s = load_forms_cil('Liner_semanal')
