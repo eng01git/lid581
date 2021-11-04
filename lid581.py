@@ -498,7 +498,7 @@ def Liner_diario():
 		st.write(data_form)
 		st.write(hora_atual)
 		st.write(str(data_form))
-		st.write(str(hora_atual))
+		st.write(str(hora_atual).split('.')[0])
 # 		st.write(dic['I1'])
 # 		st.write(dic['I2'])
 
