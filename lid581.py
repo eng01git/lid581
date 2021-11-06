@@ -67,24 +67,24 @@ selecao_tipo = st.sidebar.radio('Selecione o tipo do formulario', tipos)
 tz = pytz.timezone('America/Bahia')
 
 formularios_cil = [
-	'Liner turno',
+	'Liner diário',
 	'Liner semanal',
-	'Shell turno',
+	'Shell diário',
 	'Shell semanal',
-	'Autobagger turno',
+	'Autobagger diário',
 	'Autobagger semanal',
 	'Autobagger mensal',
-	'Conversion turno',
+	'Conversion diário',
 	'Conversion semanal',
 	'Conversion mensal',
-	'Balancer turno',
+	'Balancer diário',
 	'Balancer semanal',
 	'Estatisticas',			# Gráficos com filtros
 	'Visualizar formulários',	# Filtros para visualizar os questionários desejeados
 	'Suporte Engenharia'
 ]
-formularios_cil_2 = ['Liner turno','Liner semanal','Shell turno','Shell semanal','Autobagger turno','Autobagger semanal','Autobagger mensal',
-		     'Conversion turno','Conversion semanal','Conversion mensal','Balancer turno','Balancer semanal']
+formularios_cil_2 = ['Liner diário','Liner semanal','Shell diário','Shell semanal','Autobagger diário','Autobagger semanal','Autobagger mensal',
+		     'Conversion diário','Conversion semanal','Conversion mensal','Balancer diário','Balancer semanal']
 
 formularios_trouble = [
 	'Liner',
@@ -2516,8 +2516,8 @@ if __name__ == '__main__':
 	#			Chamadada das páginas do cil
 	##################################################################################################
 	
-	if func_escolhida == 'Liner turno':
-		st.subheader('Liner turno')
+	if func_escolhida == 'Liner diário':
+		st.subheader('Liner diário')
 		ln = df_cil_liner_d.tail(1)['I0']
 		lt = df_cil_liner_d.tail(1)['I1']
 		ld = df_cil_liner_d.tail(1)['I2']
@@ -2542,8 +2542,8 @@ if __name__ == '__main__':
 			Liner_semanal_proc()
 		Liner_semanal()
 		
-	if func_escolhida == 'Shell turno':
-		st.subheader('Shell turno')
+	if func_escolhida == 'Shell diário':
+		st.subheader('Shell diário')
 		ln = df_cil_shell_d.tail(1)['I0']
 		lt = df_cil_shell_d.tail(1)['I1']
 		ld = df_cil_shell_d.tail(1)['I2']
@@ -2568,8 +2568,8 @@ if __name__ == '__main__':
 			Shell_semanal_proc()
 		Shell_semanal()
 		
-	if func_escolhida == 'Autobagger turno':
-		st.subheader('Autobagger turno')
+	if func_escolhida == 'Autobagger diário':
+		st.subheader('Autobagger diário')
 		ln = df_cil_auto_d.tail(1)['I0']
 		lt = df_cil_auto_d.tail(1)['I1']
 		ld = df_cil_auto_d.tail(1)['I2']
@@ -2607,8 +2607,8 @@ if __name__ == '__main__':
 			Autobagger_mensal_proc()
 		Autobagger_mensal()
 		
-	if func_escolhida == 'Conversion turno':
-		st.subheader('Conversion turno')
+	if func_escolhida == 'Conversion diário':
+		st.subheader('Conversion diário')
 		ln = df_cil_conv_d.tail(1)['I0']
 		lt = df_cil_conv_d.tail(1)['I1']
 		ld = df_cil_conv_d.tail(1)['I2']
@@ -2646,8 +2646,8 @@ if __name__ == '__main__':
 			conversion_mensal_proc()
 		conversion_mensal()
 		
-	if func_escolhida == 'Balancer turno':
-		st.subheader('Balancer turno')
+	if func_escolhida == 'Balancer diário':
+		st.subheader('Balancer diário')
 		ln = df_cil_bala_d.tail(1)['I0']
 		lt = df_cil_bala_d.tail(1)['I1']
 		ld = df_cil_bala_d.tail(1)['I2']
@@ -2719,7 +2719,7 @@ if __name__ == '__main__':
 	if func_escolhida ==  'Visualizar formulários':
 		form_selecionado = st.selectbox('Selecione o tipo de formulário que deseja visualizar', formularios_cil_2)
 		
-		if form_selecionado == 'Liner turno':
+		if form_selecionado == 'Liner diário':
 			df_cil = load_forms_cil('Liner_diario')
 			
 			# Lista e ordena as colunas do dataframe
@@ -2776,7 +2776,7 @@ if __name__ == '__main__':
 				st.info('Q21) Limpeza da Conveyor #5 LN-BB e Pushers 1,2,3 no mesanino: 1-Limpar com pano umedecido em álcool isopropílico.')
 				st.info('Q22) Limpeza do filtro AIRCON painel elétrico, na alimentação de entrada: 1- Utilizar água e pistola de ar.')
 
-		if form_selecionado == 'Shell turno':
+		if form_selecionado == 'Shell diário':
 			df_cil = load_forms_cil('shell_diario')
 			
 			# Lista e ordena as colunas do dataframe
@@ -2840,7 +2840,7 @@ if __name__ == '__main__':
 				st.info('Q19) Limpeza parte externa da máquina: Limpar parte externa do equipamento utilizando pano umedecido com álcool isopropílico.')
 				st.info('Q20) Unidade de conservação de Ar: Drenar a água do filtro da linha pneumática.')
 			
-		if form_selecionado == 'Autobagger turno':
+		if form_selecionado == 'Autobagger diário':
 			df_cil_aux = load_forms_cil('autobagger_diario')
 			df_cil = df_cil_aux.copy()
 			df_cil['Q05'] = 'OK'
@@ -2899,7 +2899,7 @@ if __name__ == '__main__':
 				st.info('Q07) Corrente transporte (Pallet conveyor) - Sistema de paletização do pallet: Realizar limpeza / inspeção / lubrificação do conjunto de transmissão da corrente, tirando o excesso de lubrificante e sujidades com o equipamento parado devidamente com o bloqueio loto.')
 				st.info('Q08) Corrente motora ( Pallet conveyor) - Sistema de paletização do pallet: Realizar limpeza / inspeção / lubrificação do conjunto de transmissão da corrente, tirando o excesso de lubrificante e sujidades com o equipamento parado devidamente com o bloqueio loto.')
 			
-		if form_selecionado == 'Conversion turno':
+		if form_selecionado == 'Conversion diário':
 			df_cil = load_forms_cil('conversion_diario')
 			
 			# Lista e ordena as colunas do dataframe
@@ -2986,7 +2986,7 @@ if __name__ == '__main__':
 				st.info('Q12) Sistema de vácuo: Inspecionar quanto a integridade e executar a limpeza do mesmo.')
 				st.info('Q13) Correia de transporte do conveyor: Inspecionar quanto a integridade e executar a limpeza do mesmo.')
 			
-		if form_selecionado == 'Balancer turno':
+		if form_selecionado == 'Balancer diário':
 			df_cil = load_forms_cil('balancer_diario')
 			
 			# Lista e ordena as colunas do dataframe
@@ -3325,7 +3325,7 @@ if __name__ == '__main__':
 		col_d, col_s, col_m = st.beta_columns([4,4,2])
 		
 		with col_d:
-			st.subheader('Percentual de CIL turno:')
+			st.subheader('Percentual de CIL diário:')
 			# Monta planilha para exibir dados
 			gridOptions, grid_height, return_mode_value, update_mode_value, fit_columns_on_grid_load, enable_enterprise_modules = config_grid(cil_diario, True)
 			response = AgGrid(
