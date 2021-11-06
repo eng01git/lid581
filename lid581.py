@@ -337,7 +337,7 @@ def gravar_acao_edit(row):
 	ea_chave = str(row['Numero do 5-Porques']) + '_' + str(row['Numero da ação'])
 	row_string = row.astype(str)
 	db.collection("acoes").document(ea_chave).set(row_string.to_dict(),merge=True)
-	caching.clear_cache()
+	#caching.clear_cache()
 
 ######################################################################################################
                                            #Função para enviar email
@@ -499,7 +499,7 @@ def Liner_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -718,7 +718,7 @@ def Liner_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -871,7 +871,7 @@ def Shell_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1056,7 +1056,7 @@ def Shell_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1150,7 +1150,7 @@ def Autobagger_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1257,7 +1257,7 @@ def Autobagger_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1395,7 +1395,7 @@ def Autobagger_mensal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1517,7 +1517,7 @@ def balancer_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1621,7 +1621,7 @@ def balancer_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1727,7 +1727,7 @@ def conversion_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1928,7 +1928,7 @@ def conversion_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -2068,7 +2068,7 @@ def conversion_mensal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -2460,7 +2460,7 @@ def trouble_tab():
 def enviar_troubleshoot(dic, colecao):
 
 	# Limpa cache
-	caching.clear_cache()
+	#caching.clear_cache()
 
 	# Transforma dados do formulário em um dicionário
 	keys_values = dic.items()
