@@ -337,7 +337,7 @@ def gravar_acao_edit(row):
 	ea_chave = str(row['Numero do 5-Porques']) + '_' + str(row['Numero da ação'])
 	row_string = row.astype(str)
 	db.collection("acoes").document(ea_chave).set(row_string.to_dict(),merge=True)
-	caching.clear_cache()
+	#caching.clear_cache()
 
 ######################################################################################################
                                            #Função para enviar email
@@ -433,12 +433,12 @@ def Liner_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+		# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
 
 
 		T00, Q00, C00 = st.beta_columns([3,1,3])
@@ -465,8 +465,8 @@ def Liner_diario():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()
 
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
@@ -499,7 +499,7 @@ def Liner_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -548,12 +548,12 @@ def Liner_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -631,8 +631,8 @@ def Liner_semanal():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -718,7 +718,7 @@ def Liner_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -765,12 +765,12 @@ def Shell_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -816,8 +816,8 @@ def Shell_diario():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -871,7 +871,7 @@ def Shell_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -936,12 +936,12 @@ def Shell_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -995,8 +995,8 @@ def Shell_semanal():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1056,7 +1056,7 @@ def Shell_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1101,12 +1101,12 @@ def Autobagger_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -1124,8 +1124,8 @@ def Autobagger_diario():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1150,7 +1150,7 @@ def Autobagger_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1200,12 +1200,12 @@ def Autobagger_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -1227,8 +1227,8 @@ def Autobagger_semanal():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1257,7 +1257,7 @@ def Autobagger_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1325,12 +1325,12 @@ def Autobagger_mensal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -1359,8 +1359,8 @@ def Autobagger_mensal():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1395,7 +1395,7 @@ def Autobagger_mensal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1472,12 +1472,12 @@ def balancer_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -1493,8 +1493,8 @@ def balancer_diario():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1517,7 +1517,7 @@ def balancer_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1562,12 +1562,12 @@ def balancer_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -1590,8 +1590,8 @@ def balancer_semanal():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1621,7 +1621,7 @@ def balancer_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1665,12 +1665,12 @@ def conversion_diario():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -1694,8 +1694,8 @@ def conversion_diario():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1727,7 +1727,7 @@ def conversion_diario():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1792,12 +1792,12 @@ def conversion_semanal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -1861,8 +1861,8 @@ def conversion_semanal():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()        
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()        
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -1928,7 +1928,7 @@ def conversion_semanal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -1978,12 +1978,12 @@ def conversion_mensal():
 	with st.form('Form'):
     
 		# Define a organização das colunas
-		dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
-		# c0, c1, c2 = st.beta_columns([3,1,3])
-		# dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
-		# hora_atual = c1.time_input('Horário do Cil')
-		# data_form = c2.date_input('Data do Cil')
-		# dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
+				# dic['I0' ] = st.selectbox('Nome do colaborador', nomes) 
+		c0, c1, c2 = st.beta_columns([3,1,3])
+		dic['I0' ] = c0.selectbox('Nome do colaborador', nomes)
+		hora_atual = c1.time_input('Horário do Cil')
+		data_form = c2.date_input('Data do Cil')
+		dic['I2'] = str(data_form) + ' ' + str(hora_atual).split('.')[0]
         
 		T00, Q00, C00 = st.beta_columns([3,1,3])
 		T01, Q01, C01 = st.beta_columns([3,1,3])
@@ -2021,8 +2021,8 @@ def conversion_mensal():
 		respostas = ['OK', 'NOK']
 
 		# Questões
-		dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
-		hora_atual = datetime.now(tz).time()
+		# dic['I2' ] = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+		# hora_atual = datetime.now(tz).time()
 		
 		if (hora_atual >= time(23, 0, 0)) | (hora_atual < time(7, 0, 0)):
 			dic['I1' ] = 'Turno A'
@@ -2068,7 +2068,7 @@ def conversion_mensal():
 	if submitted:
 
 		# Limpa cache
-		caching.clear_cache()
+		#caching.clear_cache()
 		
 		# Transforma dados do formulário em um dicionário
 		keys_values = dic.items()
@@ -2460,7 +2460,7 @@ def trouble_tab():
 def enviar_troubleshoot(dic, colecao):
 
 	# Limpa cache
-	caching.clear_cache()
+	#caching.clear_cache()
 
 	# Transforma dados do formulário em um dicionário
 	keys_values = dic.items()
